@@ -9,7 +9,7 @@ main() async {
   getUser();
 }
 
-Future<void> getUser() {
+Future<void> getUser() async {
    try {
 		print(await fetchUser());
 	} catch (error) {
