@@ -10,5 +10,5 @@ main() async {
 
 Future<String> getUserId() async {
   final userData = await fetchUserData();
-  return userData['id'] as String;
+  return userData['id'];
 }
