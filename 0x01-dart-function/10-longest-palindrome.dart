@@ -27,5 +27,5 @@ String longestPalindrome(String s) {
       }
     }
   }
-  return longest.isNotEmpty ? longest : null;
+  return longest.isNotEmpty ? longest : "none";
 }
