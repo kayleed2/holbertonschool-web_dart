@@ -1,3 +1,5 @@
+import '6-password.dart';
+
 class Password {
   String _password;
   Password({required String password}) : _password = password;
