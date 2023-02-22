@@ -16,7 +16,7 @@ bool isPalindrome(String s) {
 
 String longestPalindrome(String s) {
   if (s == null || s.length < 3) {
-    return null;
+    return "none";
   }
   String longest = '';
   for (int i = 0; i < s.length - 1; i++) {
