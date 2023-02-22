@@ -15,10 +15,9 @@ main() async {
 
 Future<String> greetUser() async {
   try {
-    final userData = await fetchUserData();
+    final userData = json.decode(await fetchUserData());
     final name = userData['name'] as String;
-    final newname = json.decode(name);
-    return 'Hello $newname!';
+    return 'Hello $name!';
   } catch (e) {
     return 'error caught: $e';
   }
