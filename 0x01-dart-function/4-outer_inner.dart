@@ -1,4 +1,4 @@
-String name = "default", id = 0;
+String name = "", id = "";
 
 void outer(String name, String id) {
   // set the name and id to global variables to be used by the inner() function
