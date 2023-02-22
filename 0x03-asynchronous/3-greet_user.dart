@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:async';
+
 Future<String> fetchUserData() => Future.delayed(
       const Duration(seconds: 2),
       () =>
@@ -13,10 +16,10 @@ main() async {
 Future<String> greetUser() async {
   try {
     final userData = await fetchUserData();
-    final name = userData['name'] as String;
+    final name = json.decode(userData)['name'] as String;
     return 'Hello $name!';
   } catch (e) {
-    return 'Error caught: $e';
+    return 'error caught: $e';
   }
 }
 
