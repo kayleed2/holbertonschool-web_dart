@@ -15,9 +15,7 @@ main() async {
 
 Future<String> greetUser() async {
   try {
-    final userData = json.decode(await fetchUserData());
-    final name = userData['name'] as String;
-    return 'Hello $name!';
+  return fetchUserData().then((v) => '${json.decode(v)['username']}\n')
   } catch (e) {
     return 'error caught: $e';
   }
