@@ -12,7 +12,7 @@ int sub(int a, int b) {
 String showFunc(int a, int b) {
   int sum = add(a, b);
   int diff = sub(a, b);
-  String str = "The sum of $a and $b is $sum.\n";
-  str += "The difference between $a and $b is $diff.";
+  String str = "Add $a + $b = $sum.\n";
+  str += "Sub $a - $b = $diff.";
   return str;
 }
