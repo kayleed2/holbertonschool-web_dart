@@ -5,7 +5,7 @@ Future<int> fetchUsersCount() => Future.delayed(
 
 Future<void> usersCount() {
   try {
-    int count = await fetchUsersCount();
+    int count = fetchUsersCount();
     print('$count');
   } catch (error) {
     print('Error fetching user count: $error');
