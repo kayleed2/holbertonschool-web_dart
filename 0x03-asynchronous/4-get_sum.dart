@@ -32,8 +32,6 @@ main() async {
   print(await calculateTotal());
 }
 
-import 'dart:convert';
-
 Future<double> calculateTotal() async {
   try {
     final userData = await fetchUserData();
