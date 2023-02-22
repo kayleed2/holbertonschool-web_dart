@@ -34,18 +34,14 @@ main() async {
 
 Future<double> calculateTotal() async {
   try {
-    final userData = await fetchUserData();
-    final userId = json.decode(userData)['id'] as String;
-    final userOrdersData = await fetchUserOrders(userId);
-    final userOrders = json.decode(userOrdersData) as List<dynamic>;
-    double total = 0;
-    for (final order in userOrders) {
-      final productPriceData = await fetchProductPrice(order);
-      final productPrice = double.parse(json.decode(productPriceData));
-      total += productPrice;
-    }
-    return total;
-  } catch (e) {
-    return -1;
-  }
+		dynamic user = jsonDecode(await fetchUserData());
+		List userItems = jsonDecode(await fetchUserOrders(user['id']));
+		double orderTotal = 0.0;
+		for (String item in userItems) {
+			orderTotal += jsonDecode(await fetchProductPrice(item));
+		}
+		return orderTotal;
+	} catch (error) {
+		return -1;
+	}
 }
