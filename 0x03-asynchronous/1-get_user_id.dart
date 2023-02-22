@@ -8,7 +8,6 @@ main() async {
   print(await getUserId());
 }
 
-Future<String> getUserId() async {
-  final userData = await fetchUserData();
-  return userData['id'];
+Future<String> getUserId() {
+	return fetchUserData().then((value) => jsonDecode(value)['id']);
 }
