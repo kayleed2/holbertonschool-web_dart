@@ -1,12 +1,13 @@
 class Password {
   String _password = '';
+
   bool isValid() {
-    // Check the length of the _password
+    // Check the length of the password
     if (_password.length < 8 || _password.length > 16) {
       return false;
     }
 
-    // Check if the _password contains uppercase letters, lowercase letters, and numbers
+    // Check if the password contains uppercase letters, lowercase letters, and numbers
     bool hasUppercase = false;
     bool hasLowercase = false;
     bool hasNumber = false;
