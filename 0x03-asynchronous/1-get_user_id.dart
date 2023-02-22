@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 Future<String> fetchUserData() => Future.delayed(
       const Duration(seconds: 2),
       () =>
@@ -9,5 +11,5 @@ main() async {
 }
 
 Future<String> getUserId() {
-	return fetchUserData().then((value) => jsonDecode(value)['id']);
+	return fetchUserData().then((v) => jsonDecode(v)['id']);
 }
